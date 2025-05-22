@@ -1,11 +1,12 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const cors = require('cors');
 
 const RPC_USER = 'piotr';
 const RPC_PASS = 'qweasdzxc';
 const RPC_PORT = 48332;
-
+app.use(cors());
 app.use(express.json());
 
 app.post('/rpc', async (req, res) =>{
